@@ -1,0 +1,35 @@
+extends layout
+
+block content
+  nav.navbar.navbar-expand-lg.navbar-light.fixed-top(role="navigation")
+    a.navbar-brand(href="/")#titlecolor MyBlog
+    button.navbar-toggler(type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation")
+      span.navbar-toggler-icon
+    div.collapse.navbar-collapse#navbarSupportedContent
+      ul.navbar-nav.mr-auto
+        li.nav-itm
+          a.fas.fa-pen-fancy.nav-link(href="/posts/new") &nbsp;記事を書く&nbsp;
+        li.nav-itm
+          a.nav-link.fas.fa-book-reader(href="/") &nbsp;あなたの記事&nbsp;
+        //- li.nav-itm
+        //-   a.fas.fa-search.nav-link(href="/search") &nbsp;検索&nbsp;
+        li.nav-itm
+          a.fas.fa-sign-out-alt.nav-link(href="/logout") #{user.displayName} をログアウト&nbsp;
+  div.jumbotron#image2
+    p.display-4 みんなの記事
+  div.container#list
+    //- if user
+    - var hasDiary = diaries.length > 0
+    if hasDiary
+      table.table.table-hover
+        thead
+          tr
+            th(scope="col") タイトル
+            th(scope="col") ユーザー
+            th(scope="col") 投稿日時
+        each diary in diaries
+          tr
+            td
+              a#mojicolor(href=`/posts/${diary.diaryId}`) #{diary.diaryName}
+            td #{diary.user.username}
+            td #{diary.formattedUpdatedAt}

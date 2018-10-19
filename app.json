@@ -1,0 +1,7 @@
+{
+  "name": "blog",
+  "description": "ブログ",
+  "logo": "",
+  "keywords": ["node"],
+  "image": "heroku/nodejs"
+}

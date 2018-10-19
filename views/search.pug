@@ -1,0 +1,25 @@
+extends layout
+
+block content
+  p 検索
+  form(method="post" ,action=`/search/${diaries}}`)
+    div
+      h5 タイトル
+      input(type="text" ,name="result" ,value=result)
+    div
+      button(type="submit") 検索
+  div
+    - var hasDiary = diaries.length > 0
+    if hasDiary
+      h3 検索一覧
+      table.table
+        tr
+          th タイトル
+          th ユーザー
+          th 投稿日時
+        each diary in diaries
+          tr
+            td
+              a(href=`/posts/${diary.diaryId}`) #{diary.diaryName}
+            td #{diary.user.username}
+            td #{diary.updatedAt}

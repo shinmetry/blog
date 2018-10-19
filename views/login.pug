@@ -1,0 +1,12 @@
+extends layout
+
+block content
+  div.jumbotron#login
+    h1 MyBlog
+    if user
+      div.my-3
+        p 現在 #{user.displayName} がログイン中
+      div.my-3
+        a(href="/").btn.default トップページ
+    else
+      a(href="/auth/google").btn.default  Googleでログイン

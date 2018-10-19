@@ -1,0 +1,40 @@
+extends layout
+
+block content
+  nav.navbar.navbar-expand-lg.navbar-light.fixed-top(role="navigation")
+    a.navbar-brand(href="/")#titlecolor MyBlog
+    button.navbar-toggler(type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation")
+      span.navbar-toggler-icon
+    div.collapse.navbar-collapse#navbarSupportedContent
+      ul.navbar-nav.mr-auto
+        li.nav-itm
+          a.nav-link.fas.fa-book-reader(href="/") &nbsp;あなたの記事&nbsp;
+        li.nav-itm
+          a.nav-link.fas.fa-book-reader(href="/alldiaries") &nbsp;みんなの記事&nbsp;
+        //- li.nav-itm
+        //-   a.fas.fa-search.nav-link(href="/search") &nbsp;検索&nbsp;
+        li.nav-itm
+          a.fas.fa-sign-out-alt.nav-link(href="/logout") #{user.displayName} をログアウト&nbsp;
+  div.container
+    h3 記事の編集
+    p 作成者 #{user.displayName} 投稿日時: #{diary.formattedUpdatedAt}
+    form(method="post" ,action=`/posts/${diary.diaryId}?edit=1` name="kiji2")
+      input(type="hidden" name="_csrf" value!=csrfToken)
+      div.form-group
+        label(for="exampleFormControlInput1") タイトル
+        input.form-control#exampleFormControlInput1(type="text" ,name="diaryName", value=diary.diaryName)
+      div.form-group
+        label(for="exampleFormControlTextarea1") 本文
+        textarea.form-control#exampleFormControlTextarea1(name="text" rows="10") #{diary.text}
+      div
+        a.btn2.default(href="javascript:kiji2.submit()" onclick="return check();") この内容で編集する
+    script.
+      function check(){if(document.kiji2.diaryName.value=="" ||
+      document.kiji2.diaryName.value==null ||
+      document.kiji2.text.value==""||document.kiji2.text.value==null)
+      {window.alert("タイトルまたは本文が未入力です。"); 
+      return false;}else{ return true;}};
+
+    form#delete(method="post", action=`/posts/${diary.diaryId}?delete=1` name="kiji3")
+      input(type="hidden" name="_csrf" value!=csrfToken)
+      a.btn4.default(href="javascript:kiji3.submit()" onclick="return check();") この記事を削除する

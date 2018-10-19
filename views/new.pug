@@ -1,0 +1,34 @@
+extends layout
+
+block content
+  nav.navbar.navbar-expand-lg.navbar-light.fixed-top(role="navigation")
+    a.navbar-brand(href="/")#titlecolor MyBlog
+    button.navbar-toggler(type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation")
+      span.navbar-toggler-icon
+    div.collapse.navbar-collapse#navbarSupportedContent
+      ul.navbar-nav.mr-auto
+        li.nav-itm
+          a.nav-link.fas.fa-book-reader(href="/") &nbsp;あなたの記事&nbsp;
+        li.nav-itm
+          a.nav-link.fas.fa-book-reader(href="/alldiaries") &nbsp;みんなの記事&nbsp;
+        //- li.nav-itm
+        //-   a.fas.fa-search.nav-link(href="/search") &nbsp;検索&nbsp;
+        li.nav-itm
+          a.fas.fa-sign-out-alt.nav-link(href="/logout") #{user.displayName} をログアウト&nbsp;
+
+  form.new.container(method="post", action="/posts", name="kiji")
+    input(type="hidden" name="_csrf" value!=csrfToken)
+    div.form-group
+      label(for="exampleFormControlInput1") タイトル
+      input.form-control#exampleFormControlInput1(type="text", name="diaryName", placeholder="タイトル")
+    div.form-group
+      label(for="exampleFormControlTextarea1") 本文
+      textarea.form-control#exampleFormControlTextarea1(name="text" rows="10"  placeholder="記事")
+    div
+      a.btn2.default(href="javascript:kiji.submit()" onclick="return check();") 投稿する
+  script.
+    function check(){if(document.kiji.diaryName.value=="" ||
+    document.kiji.diaryName.value==null ||
+    document.kiji.text.value==""||document.kiji.text.value==null)
+    {window.alert("タイトルまたは本文が未入力です。"); 
+    return false;}else{ return true;}};

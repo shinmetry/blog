@@ -1,0 +1,177 @@
+.back{
+    font: 14px "Lucida Grande",
+    Helvetica,
+    Arial,
+    sans-serif;
+    position: relative;
+    background-color: #fcf8ed
+}
+
+.container {
+  padding-top: 150px;
+}
+
+#image {
+  background-image: url("../images/aaron-burden-90144-unsplash.jpg");
+  background-size: cover;
+  background-position: center center;
+  text-align: center;
+  color: #ffffff;
+  padding-top: 160px;
+  font-family: fantasy;
+}
+
+#image2 {
+  background-image: url("../images/alexis-brown-82988-unsplash.jpg");
+  background-size: cover;
+  text-align: left;
+  color: #e8f7f3;
+  padding-top: 370px;
+}
+
+#list {
+  padding-bottom: 200px;
+  color: #1d4251
+}
+
+.navbar {
+  background-color: #e8f7f3;
+}
+
+#titlecolor {
+  color: #676784
+}
+
+.btn {
+  display: inline-block;
+  padding: 15px;
+  text-decoration: none;
+  transition: .3s;
+}
+
+.btn.default {
+  color: #e8f7f3;
+  border: 2px solid #e8f7f3;
+  padding: 25px 60px;
+}
+
+.btn.default:hover {
+  color: #1E1C93;
+  border: 2px solid #fff;
+  background: #e8f7f3;
+}
+
+#mojicolor {
+  color: #449b8a
+}
+
+#ichiran {
+  text-align: center
+}
+
+.btn2 {
+  display: inline-block;
+  padding: 15px;
+  text-decoration: none;
+  transition: .3s;
+  border-radius: 8px;
+}
+
+.btn2.default {
+  color: #676784;
+  border: 1px solid #676784;
+  padding: 25px 60px;
+}
+
+.btn2.default:hover {
+  color: #1E1C93;
+  border: 2px solid #fff;
+  background: #e8f7f3;
+}
+
+.btn3 {
+  display: inline-block;
+  padding: 15px;
+  text-decoration: none;
+  transition: .3s;
+  border-radius: 8px;
+}
+
+.btn3.default {
+  color: #676784;
+  border: 1px solid #676784;
+  padding: 14px 25px;
+}
+
+.btn3.default:hover {
+  color: #1E1C93;
+  border: 2px solid #fff;
+  background: #e8f7f3;
+}
+
+.btn4 {
+  display: inline-block;
+  padding: 15px;
+  text-decoration: none;
+  transition: .3s;
+  border-radius: 8px;
+}
+
+.btn4.default {
+  color: #ed5642;
+  border: 1px solid #ed5642;
+  padding: 25px 60px;
+}
+
+.btn4.default:hover {
+  color: #fff;
+  border: 2px solid #fff;
+  background: #e2867a;
+}
+
+#delete {
+  margin-top: 30px;
+}
+
+.prelude {
+  background-image: -webkit-radial-gradient(73% 147%, #EADFDF 59%, #ECE2DF 100%),
+    -webkit-radial-gradient(91% 146%, rgba(255, 255, 255, 0.5) 47%, rgba(0, 0, 0, 0.5) 100%);
+  background-image: radial-gradient(73% 147%, #EADFDF 59%, #ECE2DF 100%),
+    radial-gradient(91% 146%, rgba(255, 255, 255, 0.5) 47%, rgba(0, 0, 0, 0.5) 100%);
+  background-blend-mode: screen;
+}
+
+#btn-position {
+  margin-top: 100px;
+  padding: 20px;
+}
+
+#diary {
+  margin-top: 60px;
+  padding-top: 50px;
+  padding-bottom: 20px;
+  padding-right: 40px;
+  padding-left: 100px;
+  background-color:#fff;
+}
+
+#login {
+  background-image: url("../images/aaron-burden-90144-unsplash.jpg");
+  background-size: cover;
+  text-align: center;
+  color:#ffffff;
+  padding-top: 160px;
+  background-position: center center;
+}
+
+#txt{
+  font-size: 15px;
+  font-weight: 100;
+}
+
+.copyright{
+  font-size: 11px; 
+}
+.setsumei{
+  margin-top: 30px
+}
