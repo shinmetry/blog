@@ -37,7 +37,6 @@ router.get('/', function(req, res, next) {
 });
 
 
-
 router.get('/alldiaries', function (req, res, next) {
   const title = 'ブログ';
   if (req.user) {
